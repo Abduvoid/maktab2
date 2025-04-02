@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+	
+	<aside id="fh5co-hero">
+		<div class="flexslider">
+			<ul class="slides">
+				{% for i in banner %}
+				<li  style="background-image: url({{i.image.url}})">
+		    		<div class="overlay-gradient"></div>
+		    		<div class="container">
+		    			<div class="row">
+		    				<div class="col-md-8 col-md-offset-2 text-center slider-text">
+		    					<div class="slider-text-inner">
+		    						<h1>{{ i.name }}</h1>
+		    					</div>
+		    				</div>
+		    			</div>
+		    		</div>
+		    	</li>
+		    	{% endfor %}
+		  	</ul>
+	  	</div>
+	</aside>
+
+	<div id="fh5co-blog">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Blog va Tadbirlar</h2>
+					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+				</div>
+			</div>
+			<div class="row row-padded-mb">
+
+				{% for i in blog %}
+				<div class="col-md-4 animate-box">
+					<div class="fh5co-event">
+						<div class="date text-center"><span>{{i.day}}</span></div>
+						<h3><a href="#">{{ i.name }}</a></h3>
+						<p>{{ i.title }}</p>
+					</div>
+				</div>
+				{% endfor %}
+
+
+			</div>
+		</div>
+	</div>
+
+	
+
+{% endblock %}

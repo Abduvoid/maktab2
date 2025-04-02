@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+	
+	<aside id="fh5co-hero">
+		<div class="flexslider">
+			<ul class="slides">
+				{% for i in banner %}
+				<li  style="background-image: url({{i.image.url}})">
+		    		<div class="overlay-gradient"></div>
+		    		<div class="container">
+		    			<div class="row">
+		    				<div class="col-md-8 col-md-offset-2 text-center slider-text">
+		    					<div class="slider-text-inner">
+		    						<h1>{{ i.name }}</h1>
+		    					</div>
+		    				</div>
+		    			</div>
+		    		</div>
+		    	</li>
+		    	{% endfor %}
+		  	</ul>
+	  	</div>
+	</aside>
+
+	<div id="fh5co-contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 col-md-push-1 animate-box">
+					<div class="fh5co-contact-info">
+						<h3>Kontakt Ma'lumotlari</h3>
+						<ul>
+							<li class="address">198 West 21th Street, <br> Suite 721 New York NY 10016</li>
+							<li class="phone"><a href="tel://1234567920">+ 1235 2355 98</a></li>
+							<li class="email"><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+							<li class="url"><a href="http://freehtml5.co">freeHTML5.co</a></li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="col-md-6 animate-box">
+					<h3>Biz bilan aloqaga o'ting</h3>
+
+
+					<form method="POST">
+						{% csrf_token %}
+						<div class="row form-group">
+							<div class="col-md-6">
+								<input name="first_name" type="text" id="fname" class="form-control" placeholder="Ismingiz">
+							</div>
+							<div class="col-md-6">
+								<input name="last_name" type="text" id="lname" class="form-control" placeholder="Familiyangiz">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<input name="email" type="text" id="email" class="form-control" placeholder="Email manzilingiz">
+							</div>
+						</div>
+
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<input name="phone" type="number" id="number" class="form-control" placeholder="Telefon raqamingiz!">
+							</div>
+						</div>
+
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="MATN YOZING....."></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Xabarni yuborish" class="btn btn-primary">
+						</div>
+
+					</form>		
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<iframe 
+	id="map" 
+	class="fh5co-map"
+	src="https://www.google.com/maps/place/2-Maktab/@41.3620923,69.1164219,17.23z/data=!4m6!3m5!1s0x38ae8f4de0886051:0x1eb58db84b1b481b!8m2!3d41.3621129!4d69.1168024!16s%2Fg%2F11pcsk2714?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" 
+	width="100%" 
+	height="450" 
+	style="border:0;" 
+	allowfullscreen="" 
+	loading="lazy">
+  </iframe>
+  
+
+{% endblock %}
