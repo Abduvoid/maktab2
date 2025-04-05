@@ -5,7 +5,7 @@ from httpx import get
 from django.contrib.auth import login,logout
 from django.shortcuts import redirect
 from .mixins import NotLoginRequiredMixin
-from .forms import UserCreateForm, UserLoginForm
+from .forms import UserCreateForm, UserLoginForm, BlogForm
 
 from django.views import View
 BOT_TOKEN = '7219637434:AAFLN2MS5UcE1QSDFH4P_Vr_xSZgZYXRIfg'
@@ -57,6 +57,7 @@ class BlogView(ListView):
         blog = Blog.objects.all()
         contex['banner'] = banner
         contex['blog'] = blog
+        contex['blog_form'] = BlogForm()
         return contex
     
 
@@ -69,6 +70,7 @@ class ContactView(ListView):
     def get_context_data(self, **kwargs):
         contex = super().get_context_data(**kwargs)
         banner = Banner.objects.all()
+        
         contex['banner'] = banner
         return contex
 
@@ -87,7 +89,6 @@ def send_message(chat_id, message) :
 
 def contactview(request):
     if request.method == 'POST':
-        print(request.POST)
         data = request.POST
         first_name = data.get('first_name')
         email = data.get('email')

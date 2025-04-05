@@ -294,3 +294,12 @@
 
 
 }());
+
+
+function showNotification() {
+    let notif = document.getElementById("notif");
+    notif.style.display = "block";
+    setTimeout(() => {
+        notif.style.display = "none";
+    }, 2000); // 2 soniyadan keyin yo‘qoladi
+}

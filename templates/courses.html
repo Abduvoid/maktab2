@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block main %}
+<div id="notif" class="notification">Hali bu joy ishlamaydi!</div>
 	
 	<aside id="fh5co-hero">
 		<div class="flexslider">
@@ -29,7 +30,7 @@
 			<div class="row animate-box">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
 					<h2>Bizning Kurslarimiz</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					
 				</div>
 			</div>
 			<div class="row">
@@ -42,7 +43,7 @@
 						<div class="desc">
 							<h3><a href="#">{{i.name}}</a></h3>
 							<p>{{i.title}}</p>
-							<span><a href="#" class="btn btn-primary btn-sm btn-course">Kursni Oling</a></span>
+							<span><a onclick="showNotification()" href="#" class="btn btn-primary btn-sm btn-course">Kursni Oling</a></span>
 						</div>
 					</div>
 				</div>
