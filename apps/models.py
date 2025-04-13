@@ -53,7 +53,7 @@ class Kurs(models.Model):
 
 class Banner(models.Model):
     name = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='blogs')
+    image = models.ImageField(upload_to='banner/')
     title = models.CharField(max_length=255)
     
     def __str__(self):

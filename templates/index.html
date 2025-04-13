@@ -184,24 +184,13 @@
 					<h2>Blog va Tadbirlar</h2>
 				</div>
 			</div>
-			<!-- <div class="row row-padded-mb">
+			<div class="row row-padded-mb"> 
 
 
-				{% for i in blog %}
-				<div class="col-md-4 animate-box">
-					<div class="fh5co-event">
-						<div class="date text-center">{{i.day}}</div>
-						<h3><a href="#">{{i.name}}</a></h3>
-						<p>{{i.title}}</p>
-						<p><a href="#">Batafsil O'qish</a></p>
-					</div>
-				</div>
-				{% endfor %}
 
-			</div> -->
 
 				{% for i in blogs %}
-				<div class="col-lg-4 col-md-4">
+				<div class="col-lg-4 col-md-6">
 					<div class="fh5co-blog animate-box">
 						<a href="#" class="blog-img-holder" style="background-image: url({{i.image.url}});"></a>
 						<div class="blog-text">
@@ -213,7 +202,7 @@
 				</div>
 				{% endfor %}
 
-			<!-- </div> -->
+			</div>
 		</div>
 	</div>
 	

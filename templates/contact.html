@@ -3,26 +3,28 @@
 
 {% block main %}
 	
-	<aside id="fh5co-hero">
-		<div class="flexslider">
-			<ul class="slides">
-				{% for i in banner %}
-				<li  style="background-image: url({{i.image.url}})">
-		    		<div class="overlay-gradient"></div>
-		    		<div class="container">
-		    			<div class="row">
-		    				<div class="col-md-8 col-md-offset-2 text-center slider-text">
-		    					<div class="slider-text-inner">
-		    						<h1>{{ i.name }}</h1>
-		    					</div>
-		    				</div>
-		    			</div>
-		    		</div>
-		    	</li>
-		    	{% endfor %}
-		  	</ul>
-	  	</div>
-	</aside>
+<aside id="fh5co-hero">
+	<div class="flexslider">
+		<ul class="slides">
+			{% for i in banner %}
+			<li  style="background-image: url({{i.image.url}})">
+				<div class="overlay-gradient"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center slider-text">
+							<div class="slider-text-inner">
+								<h1>{{ i.name }}</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			{% empty %}
+			<p>Hech qanday banner mavjud emas</p>
+			{% endfor %}
+		  </ul>
+	  </div>
+</aside>
 
 	<div id="fh5co-contact">
 		<div class="container">
@@ -31,7 +33,7 @@
 					<div class="fh5co-contact-info">
 						<h3>Kontakt Ma'lumotlari</h3>
 						<ul>
-							<li class="address"> 2- MAKYAB <br> SHIFOBAXSH SUVLAR KO'CHASI, POBEDA </li>
+							<li class="address"> 2- MAKTAB <br> SHIFOBAXSH SUVLAR KO'CHASI, POBEDA </li>
 							<li class="phone"><a href="tel://1234567920">+998950045383</a></li>
 							<li class="email"><a href="mailto:info@yoursite.com">eshboyevabduvoid@gmail.com</a></li>
 						</ul>
@@ -82,16 +84,7 @@
 			
 		</div>
 	</div>
-	<iframe 
-	id="map" 
-	class="fh5co-map"
-	src="#" 
-	width="100%" 
-	height="450" 
-	style="border:0;" 
-	allowfullscreen="" 
-	loading="lazy">
-  </iframe>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5549.712153159876!2d69.11886153854931!3d41.35971903677984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8f4de0886051%3A0x1eb58db84b1b481b!2s2-Maktab!5e0!3m2!1sen!2s!4v1744369419149!5m2!1sen!2s" width="1600" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   
 
 {% endblock %}

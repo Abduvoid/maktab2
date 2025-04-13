@@ -150,6 +150,17 @@
 <!-- Asosiy -->
 <script src="{% static 'js/main.js' %}"></script>
 <script>
+    $(function(){
+      $('.flexslider').flexslider({
+        animation: "fade",
+        slideshowSpeed: 5000,
+        animationSpeed: 600,
+        controlNav: false,
+        directionNav: true,
+      });
+    });
+  </script>
+<script>
     var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
 
     // standart misol

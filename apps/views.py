@@ -62,18 +62,17 @@ class BlogView(ListView):
     
 
 
-class ContactView(ListView):
-    model = Teacher
-    context_object_name = 'contact'
-    template_name = 'contact.html'  
+# class ContactView(ListView):
+#     model = Banner
+#     context_object_name = 'contact'
+#     template_name = 'contact.html'  
 
-    def get_context_data(self, **kwargs):
-        contex = super().get_context_data(**kwargs)
-        banner = Banner.objects.all()
-        
-        contex['banner'] = banner
-        return contex
-
+#     def get_context_data(self, **kwargs):
+#         contex = super().get_context_data(**kwargs)
+#         banner = Banner.objects.all()
+#         contex['banner'] = banner
+#         return contex
+    
 
 
 def send_message(chat_id, message) :
@@ -110,7 +109,8 @@ Foydalanuvchining habari: {message}
         )
         data.save()
         send_message(6329326811, text)
-    return render(request, 'contact.html') 
+    banners = Banner.objects.all()
+    return render(request, 'contact.html', context={'banner': banners}) 
 
 
 
